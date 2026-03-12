@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dekonstruktywizm w Architekturze</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Dekonstruktywizm</h1>
+<p>Nowoczesny nurt w architekturze</p>
+<a href="#opis" class="btn">Dowiedz się więcej</a>
+</header>
+
+<nav>
+<ul>
+<li><a href="#opis">Opis</a></li>
+<li><a href="#cechy">Cechy</a></li>
+<li><a href="#architekci">Architekci</a></li>
+<li><a href="#video">Filmy</a></li>
+</ul>
+</nav>
+
+<section id="opis" class="fade">
+<h2>Czym jest dekonstruktywizm?</h2>
+
+<p>
+Dekonstruktywizm to styl architektoniczny rozwijający się od lat 80 XX wieku.
+Charakteryzuje się nieregularnymi formami, dynamiczną geometrią oraz
+celowym łamaniem zasad symetrii.
+Budynki często wyglądają jakby były złożone z fragmentów.
+</p>
+
+</section>
+
+<section id="cechy" class="fade">
+
+<h2>Główne cechy</h2>
+
+<ul class="cechy">
+<li>Brak symetrii</li>
+<li>Geometryczne deformacje</li>
+<li>Fragmentacja bryły</li>
+<li>Dynamiczne formy</li>
+<li>Nietypowe kąty i linie</li>
+</ul>
+
+</section>
+
+<section id="architekci" class="fade">
+
+<h2>Znani architekci</h2>
+
+<div class="architekci">
+
+<div class="card">
+<h3>Frank Gehry</h3>
+<p>Projektant m.in. Muzeum Guggenheima w Bilbao.</p>
+</div>
+
+<div class="card">
+<h3>Zaha Hadid</h3>
+<p>Znana z futurystycznych i płynnych form architektonicznych.</p>
+</div>
+
+<div class="card">
+<h3>Daniel Libeskind</h3>
+<p>Autor projektu Muzeum Żydowskiego w Berlinie.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="video" class="fade">
+
+<h2>Filmy o dekonstruktywizmie</h2>
+
+<div class="videos">
+
+<iframe
+src="https://www.youtube.com/embed/7nQxWCn_dBg"
+title="Deconstructivism architecture"
+allowfullscreen>
+</iframe>
+
+<iframe
+src="https://www.youtube.com/embed/0uXc9fR3F7M"
+title="Deconstructivism explained"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+<p>Strona edukacyjna o architekturze • 2026</p>
+</footer>
+
+</body>
+</html>
+  html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#111;
+color:white;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#ff3c00,#000);
+animation:fadeIn 2s;
+}
+
+header h1{
+font-size:60px;
+letter-spacing:3px;
+}
+
+header p{
+font-size:20px;
+opacity:0.9;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 25px;
+background:white;
+color:black;
+text-decoration:none;
+border-radius:30px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* MENU */
+
+nav{
+background:#000;
+position:sticky;
+top:0;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+margin:0;
+padding:0;
+list-style:none;
+}
+
+nav a{
+display:block;
+padding:15px 25px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#ff3c00;
+}
+
+/* SEKCJE */
+
+section{
+padding:80px 10%;
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+border-left:5px solid #ff3c00;
+padding-left:10px;
+margin-bottom:20px;
+}
+
+/* ANIMACJA */
+
+.fade{
+animation:fadeUp 1.5s;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+/* CECHY */
+
+.cechy{
+list-style:none;
+padding:0;
+}
+
+.cechy li{
+background:#1a1a1a;
+padding:15px;
+margin:10px 0;
+border-left:4px solid #ff3c00;
+}
+
+/* ARCHITEKCI */
+
+.architekci{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1a1a1a;
+padding:25px;
+border-radius:10px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) rotate(-1deg);
+background:#222;
+}
+
+/* VIDEO */
+
+.videos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+iframe{
+width:100%;
+height:250px;
+border:none;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#000;
+margin-top:40px;
+}
