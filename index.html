@@ -8,72 +8,37 @@
 
 <style>
 
-/* płynne przewijanie */
 html{
 scroll-behavior:smooth;
 }
 
-/* tło zmieniające kolory */
+/* animowane kolorowe tło */
+
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Segoe UI, Arial, sans-serif;
 color:white;
-line-height:1.6;
 
-background:linear-gradient(135deg,#ff3c00,#0022ff,#111,#00aaff,#000);
-background-size:400% 400%;
-animation:zmianaKolorow 15s ease infinite;
+background:linear-gradient(270deg,#ff4d00,#7b00ff,#0099ff,#00ffaa);
+background-size:800% 800%;
+animation:gradient 20s ease infinite;
 }
 
-/* animacja zmiany kolorów */
-@keyframes zmianaKolorow{
+@keyframes gradient{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
-/* HEADER */
-
-header{
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-animation:fadeIn 2s;
-}
-
-header h1{
-font-size:60px;
-letter-spacing:3px;
-}
-
-header p{
-font-size:20px;
-opacity:0.9;
-}
-
-.btn{
-margin-top:20px;
-padding:12px 25px;
-background:white;
-color:black;
-text-decoration:none;
-border-radius:30px;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
-}
-
-/* MENU */
+/* NAVBAR */
 
 nav{
-background:rgba(0,0,0,0.7);
 position:sticky;
 top:0;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+padding:10px;
+z-index:100;
 }
 
 nav ul{
@@ -82,95 +47,149 @@ justify-content:center;
 list-style:none;
 margin:0;
 padding:0;
+gap:20px;
 }
 
 nav a{
-display:block;
-padding:15px 25px;
 color:white;
 text-decoration:none;
+font-weight:bold;
+padding:10px 15px;
+border-radius:8px;
 transition:0.3s;
 }
 
 nav a:hover{
-background:#ff3c00;
+background:rgba(255,255,255,0.2);
+}
+
+/* HEADER */
+
+header{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+header h1{
+font-size:70px;
+margin:0;
+letter-spacing:4px;
+}
+
+header p{
+font-size:22px;
+opacity:0.9;
+}
+
+.btn{
+margin-top:25px;
+padding:14px 30px;
+background:white;
+color:black;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
 }
 
 /* SEKCJE */
 
 section{
-padding:70px 10%;
-max-width:1000px;
+padding:80px 12%;
+max-width:1200px;
 margin:auto;
 }
 
 h2{
-border-left:5px solid #ff3c00;
-padding-left:10px;
+font-size:36px;
+margin-bottom:20px;
 }
 
-/* animacja pojawiania */
+/* glassmorphism */
 
-.fade{
-animation:fadeUp 1.5s;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+.box{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-/* lista */
+/* LISTA CECH */
 
 .cechy{
-list-style:none;
-padding:0;
-}
-
-.cechy li{
-background:rgba(0,0,0,0.5);
-padding:15px;
-margin:10px 0;
-border-left:4px solid #ff3c00;
-}
-
-/* karty architektów */
-
-.architekci{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
 }
 
-.karta{
-background:rgba(0,0,0,0.6);
+.cecha{
+background:rgba(0,0,0,0.3);
 padding:20px;
 border-radius:10px;
 transition:0.3s;
 }
 
-.karta:hover{
-transform:translateY(-10px);
-background:rgba(0,0,0,0.8);
+.cecha:hover{
+transform:translateY(-5px);
+background:rgba(0,0,0,0.5);
 }
 
-/* video */
+/* ARCHITEKCI */
+
+.architekci{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.karta{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:15px;
+transition:0.4s;
+}
+
+.karta:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+/* GALERIA */
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.galeria img{
+width:100%;
+border-radius:12px;
+transition:0.4s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+/* VIDEO */
 
 .videos{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+gap:25px;
+margin-top:30px;
 }
 
 iframe{
@@ -180,13 +199,13 @@ border:none;
 border-radius:10px;
 }
 
-/* stopka */
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:25px;
-background:rgba(0,0,0,0.7);
-margin-top:40px;
+padding:30px;
+background:rgba(0,0,0,0.4);
+margin-top:60px;
 }
 
 </style>
@@ -195,49 +214,61 @@ margin-top:40px;
 
 <body>
 
-<header>
-<h1>Dekonstruktywizm</h1>
-<p>Nowoczesny kierunek w architekturze</p>
-<a href="#opis" class="btn">Dowiedz się więcej</a>
-</header>
-
 <nav>
 <ul>
 <li><a href="#opis">Opis</a></li>
 <li><a href="#cechy">Cechy</a></li>
 <li><a href="#architekci">Architekci</a></li>
+<li><a href="#galeria">Galeria</a></li>
 <li><a href="#video">Filmy</a></li>
 </ul>
 </nav>
 
-<section id="opis" class="fade">
+<header>
+
+<h1>Dekonstruktywizm</h1>
+<p>Nowoczesna architektura pełna dynamicznych form</p>
+
+<a href="#opis" class="btn">Poznaj styl</a>
+
+</header>
+
+<section id="opis">
 
 <h2>Czym jest dekonstruktywizm?</h2>
 
+<div class="box">
+
 <p>
-Dekonstruktywizm to styl architektoniczny rozwijający się od lat 80 XX wieku.
-Charakteryzuje się nieregularnymi formami, dynamiczną geometrią oraz
-celowym łamaniem zasad symetrii. Budynki często wyglądają jakby były
-złożone z fragmentów i przecinających się brył.
+Dekonstruktywizm to nurt architektoniczny rozwijający się od lat 80.
+Charakteryzuje się nieregularnymi kształtami, dynamiczną geometrią
+oraz łamaniem zasad symetrii. Budynki projektowane w tym stylu
+sprawiają wrażenie fragmentarycznych i często przypominają
+rozbite lub przesunięte bryły.
 </p>
+
+</div>
 
 </section>
 
-<section id="cechy" class="fade">
+<section id="cechy">
 
 <h2>Główne cechy stylu</h2>
 
-<ul class="cechy">
-<li>Brak symetrii</li>
-<li>Nieregularne kształty</li>
-<li>Dynamiczna geometria</li>
-<li>Fragmentacja bryły</li>
-<li>Nowoczesne materiały</li>
-</ul>
+<div class="cechy">
+
+<div class="cecha">Brak symetrii</div>
+<div class="cecha">Dynamiczne linie</div>
+<div class="cecha">Fragmentacja bryły</div>
+<div class="cecha">Nietypowa geometria</div>
+<div class="cecha">Nowoczesne materiały</div>
+<div class="cecha">Ekspresyjna forma</div>
+
+</div>
 
 </section>
 
-<section id="architekci" class="fade">
+<section id="architekci">
 
 <h2>Znani architekci</h2>
 
@@ -245,12 +276,12 @@ złożone z fragmentów i przecinających się brył.
 
 <div class="karta">
 <h3>Frank Gehry</h3>
-<p>Autor projektu Muzeum Guggenheima w Bilbao.</p>
+<p>Autor słynnego Muzeum Guggenheima w Bilbao.</p>
 </div>
 
 <div class="karta">
 <h3>Zaha Hadid</h3>
-<p>Słynna architektka znana z futurystycznych projektów.</p>
+<p>Architektka znana z futurystycznych projektów.</p>
 </div>
 
 <div class="karta">
@@ -262,7 +293,23 @@ złożone z fragmentów i przecinających się brył.
 
 </section>
 
-<section id="video" class="fade">
+<section id="galeria">
+
+<h2>Przykłady architektury</h2>
+
+<div class="galeria">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Guggenheim_Museum_Bilbao.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jewish_Museum_Berlin.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Heydar_Aliyev_Center.jpg">
+
+</div>
+
+</section>
+
+<section id="video">
 
 <h2>Filmy o dekonstruktywizmie</h2>
 
@@ -277,7 +324,9 @@ złożone z fragmentów i przecinających się brył.
 </section>
 
 <footer>
-<p>Strona edukacyjna o architekturze • 2026</p>
+
+<p>Strona o architekturze dekonstruktywizmu • 2026</p>
+
 </footer>
 
 </body>
